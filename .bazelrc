@@ -1,0 +1,11 @@
+build:debug -c dbg
+build:debug --copt="-g"
+build:debug --strip="never"
+
+build:lsan --copt -fsanitize=leak
+build:lsan --copt -O0
+build:lsan --linkopt -fsanitize=leak
+
+build:msan --copt -fsanitize=memory
+build:msan --copt -O0
+build:msan --linkopt -fsanitize=memory
